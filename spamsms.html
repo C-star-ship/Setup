@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <!-- 🔴 META TAGS BẮTBUỘC - để hệ thống tự động nhận diện -->
+  <meta name="guide-title" content="Android - Termux (SpamSMS)">
+  <meta name="guide-icon" content="📱">
+  <meta name="guide-description" content="Hướng dẫn setup SpamSMS trên Android Termux">
+  <meta name="guide-order" content="1">
+  
+  <!-- Meta chuẩn -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setup SpamSMS - Android Termux</title>
+  
+  <!-- CSS nội bộ (tùy chọn) -->
+  <style>
+    /* CSS được tự động sử dụng từ hệ thống chính, không cần định nghĩa lại */
+    /* Nhưng nếu cần CSS riêng, có thể thêm ở đây */
+  </style>
+</head>
+<body>
+
+<h1>⚙️ Hướng Dẫn Setup Tool</h1>
+<div class="gmeta"><span>📱 Android - Termux</span><span>🟢 Đang hoạt động</span></div>
+
+<div class="highlight">
+  <strong>⚠️ Lưu Ý:</strong> Sao chép lệnh và nhập theo thứ tự. Đảm bảo đã tải <strong>Termux</strong> và file <strong>spamsms.py</strong> về <code>/sdcard/Download/</code> trước.
+</div>
+
+<h2>📋 Yêu Cầu</h2>
+<ul>
+  <li>Termux đã cài từ F-Droid hoặc Google Play</li>
+  <li>File <code>spamsms.py</code> trong <code>/sdcard/Download/</code></li>
+  <li>Kết nối Internet ổn định, dung lượng trống ≥ 500MB</li>
+</ul>
+
+<h2>🚀 Lệnh Setup Ban Đầu</h2>
+
+<h3>Bước 1 — Cài quyền truy cập thư mục cho tool</h3>
+<div class="step">
+  <div class="command-box" id="c1">termux-setup-storage</div>
+  <button class="copy-btn" data-target="c1">📋 Sao chép lệnh</button>
+  <br><small>⏱ Quá trình này mất 1-2 phút — không tắt Termux</small>
+</div>
+
+<h3>Bước 2 — Cài đặt tất cả thư viện</h3>
+<div class="step">
+  <div class="command-box" id="c2">apt update && apt upgrade && pkg install php && pkg install python && pkg install git && pkg install wget && pip install requests && pip install bs4 && pip install Pysocks && pip install faker && pip install pystyle && pip install colorama && pip install urllib3 </div>
+  <button class="copy-btn" data-target="c2">📋 Sao chép lệnh</button>
+  <br><small>⏱ Quá trình này mất 10–15 phút — không tắt Termux</small>
+</div>
+
+<h3>Bước 3 — Khởi chạy Tool</h3>
+<div class="step">
+  <div class="command-box" id="c3">cd /sdcard/Download && python spamsms.py</div>
+  <button class="copy-btn" data-target="c3">📋 Sao chép lệnh</button>
+  <br><small>✅ Thành công khi thấy giao diện tool hiện ra</small>
+</div>
+
+<h2>🔄 Lệnh Vào Tool Các Lần Sau</h2>
+<div class="step">
+  <div class="command-box" id="c4">cd /sdcard/Download && python spamsms.py</div>
+  <button class="copy-btn" data-target="c4">📋 Sao chép lệnh</button>
+  <br><small>💡 Không cần chạy Bước 1 và 2 nữa</small>
+</div>
+
+<h2>🔧 Xử Lý Sự Cố</h2>
+
+<h3>❌ "command not found: python"</h3>
+<p>Python chưa cài. Chạy lại toàn bộ lệnh ở Bước 2.</p>
+
+<h3>❌ "ModuleNotFoundError"</h3>
+<p>Một số thư viện Python chưa được cài đặt. Chạy lệnh này:</p>
+<div class="command-box" id="c5">pip install requests bs4 Pysocks faker pystyle colorama urllib3</div>
+<button class="copy-btn" data-target="c5">📋 Sao chép</button>
+
+<h3>❌ "No such file or directory"</h3>
+<p>Kiểm tra lại <code>spamsms.py</code> có trong <code>/sdcard/Download/</code> không.</p>
+
+<h3>❌ Cài đặt quá chậm</h3>
+<p>Kết nối internet có thể chậm. Hãy kết nối WiFi thay vì dữ liệu di động hoặc chờ lâu hơn. Nếu quá trình dừng giữa chừng, hãy chạy lại lệnh cài đặt.</p>
+
+<h2>💡 Mẹo & Lưu Ý Quan Trọng</h2>
+<ul>
+  <li>→ Luôn sao chép lệnh đầy đủ, không được bỏ sót ký tự nào</li>
+  <li>→ Trong quá trình cài đặt, khi được hỏi "Do you want to continue?" hãy gõ <strong>y</strong> hoặc <strong>yes</strong></li>
+  <li>→ Không tắt Termux khi quá trình cài đặt đang diễn ra</li>
+  <li>→ Nếu lệnh thất bại, hãy chạy lại mà không cần phải xóa mọi thứ</li>
+  <li>→ Đảm bảo tool file (spamsms.py) nằm trong thư mục /sdcard/Download/</li>
+  <li>→ Dùng WiFi để cài đặt nhanh hơn dữ liệu di động</li>
+</ul>
+
+<hr>
+<p style="text-align:center;color:#444c56;font-size:.74rem">✨ Version 1.0 &nbsp;|&nbsp; © 2024 RV Tool</p>
+
+</body>
+</html>

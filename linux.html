@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <!-- 🔴 META TAGS BẮTBUỘC - để hệ thống tự động nhận diện -->
+  <meta name="guide-title" content="Linux - Ubuntu/Debian (SpamSMS)">
+  <meta name="guide-icon" content="🐧">
+  <meta name="guide-description" content="Hướng dẫn setup SpamSMS trên Linux Ubuntu/Debian">
+  <meta name="guide-order" content="2">
+  
+  <!-- Meta chuẩn -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setup SpamSMS - Linux Ubuntu/Debian</title>
+  
+  <!-- CSS nội bộ (tùy chọn) -->
+  <style>
+    /* CSS được tự động sử dụng từ hệ thống chính, không cần định nghĩa lại */
+  </style>
+</head>
+<body>
+
+<h1>🐧 Hướng Dẫn Setup Tool</h1>
+<div class="gmeta"><span>🐧 Linux - Ubuntu/Debian</span><span>🟢 Đang hoạt động</span></div>
+
+<div class="highlight">
+  <strong>⚠️ Lưu Ý:</strong> Một số lệnh cần quyền <code>sudo</code>. Nhập mật khẩu hệ thống khi được yêu cầu.
+</div>
+
+<h2>📋 Yêu Cầu</h2>
+<ul>
+  <li>Ubuntu 18.04+ hoặc Debian 9+</li>
+  <li>Python 3.7+ và quyền <code>sudo</code></li>
+  <li>Kết nối Internet ổn định</li>
+</ul>
+
+<h2>🚀 Lệnh Setup</h2>
+
+<h3>Bước 1 — Cập nhật hệ thống</h3>
+<div class="step">
+  <div class="command-box" id="l1">sudo apt update && sudo apt upgrade -y</div>
+  <button class="copy-btn" data-target="l1">📋 Sao chép lệnh</button>
+</div>
+
+<h3>Bước 2 — Cài Python & công cụ</h3>
+<div class="step">
+  <div class="command-box" id="l2">sudo apt install -y python3 python3-pip git wget curl</div>
+  <button class="copy-btn" data-target="l2">📋 Sao chép lệnh</button>
+</div>
+
+<h3>Bước 3 — Cài thư viện Python</h3>
+<div class="step">
+  <div class="command-box" id="l3">pip3 install requests beautifulsoup4 pysocks faker pystyle colorama urllib3</div>
+  <button class="copy-btn" data-target="l3">📋 Sao chép lệnh</button>
+</div>
+
+<h3>Bước 4 — Chạy Tool</h3>
+<div class="step">
+  <div class="command-box" id="l4">cd ~/Downloads && python3 spamsms.py</div>
+  <button class="copy-btn" data-target="l4">📋 Sao chép lệnh</button>
+  <br><small>✅ Thành công khi thấy giao diện tool hiện ra</small>
+</div>
+
+<h2>🔄 Cách Khởi Chạy Tool Lần Tiếp Theo</h2>
+<div class="step">
+  <div class="command-box" id="l5">cd ~/Downloads && python3 spamsms.py</div>
+  <button class="copy-btn" data-target="l5">📋 Sao chép lệnh</button>
+  <br><small>Hoặc thay đường dẫn bằng vị trí thực tế của tool</small>
+</div>
+
+<h2>🔧 Xử Lý Sự Cố Thường Gặp</h2>
+
+<h3>❌ Lỗi: "command not found: python3"</h3>
+<p>Python3 chưa được cài đặt. Hãy chạy:</p>
+<div class="command-box" id="le1">sudo apt install -y python3</div>
+<button class="copy-btn" data-target="le1">📋 Sao chép</button>
+
+<h3>❌ Lỗi: "pip3: command not found"</h3>
+<p>Pip3 chưa được cài đặt:</p>
+<div class="command-box" id="le2">sudo apt install -y python3-pip</div>
+<button class="copy-btn" data-target="le2">📋 Sao chép</button>
+
+<h3>❌ Lỗi: "ModuleNotFoundError"</h3>
+<p>Thư viện Python chưa được cài đặt. Chạy lệnh cài đặt pip ở bước 3 lại:</p>
+<div class="command-box" id="le3">pip3 install requests beautifulsoup4 pysocks faker pystyle colorama urllib3</div>
+<button class="copy-btn" data-target="le3">📋 Sao chép</button>
+
+<h3>❌ Lỗi: "Permission denied"</h3>
+<p>Bạn có thể không có quyền truy cập file. Thử chạy với sudo hoặc thay đổi quyền file:</p>
+<div class="command-box" id="le4">chmod +x spamsms.py && python3 spamsms.py</div>
+<button class="copy-btn" data-target="le4">📋 Sao chép</button>
+
+<h2>💡 Mẹo Hữu Ích</h2>
+
+<h3>Sử dụng Virtual Environment</h3>
+<p>Để tránh xung đột thư viện:</p>
+<div class="command-box" id="le5">python3 -m venv myenv
+source myenv/bin/activate
+pip install requests beautifulsoup4 pysocks faker pystyle colorama urllib3</div>
+<button class="copy-btn" data-target="le5">📋 Sao chép</button>
+
+<h3>Tạo Shortcut để chạy nhanh</h3>
+<div class="command-box" id="le6">echo "cd ~/Downloads && python3 spamsms.py" > ~/runtool.sh
+chmod +x ~/runtool.sh
+~/runtool.sh</div>
+<button class="copy-btn" data-target="le6">📋 Sao chép</button>
+
+<h2>📚 Lệnh Hữu Ích Khác</h2>
+<ul>
+  <li><strong>Kiểm tra phiên bản Python:</strong> <code>python3 --version</code></li>
+  <li><strong>Kiểm tra phiên bản pip:</strong> <code>pip3 --version</code></li>
+  <li><strong>Liệt kê thư viện đã cài:</strong> <code>pip3 list</code></li>
+  <li><strong>Cập nhật pip:</strong> <code>pip3 install --upgrade pip</code></li>
+  <li><strong>Xóa tool:</strong> <code>rm -rf ~/Downloads/spamsms.py</code></li>
+</ul>
+
+<hr>
+<p style="text-align:center;color:#444c56;font-size:.74rem">✨ Version 1.0 &nbsp;|&nbsp; © 2024 RV Tool</p>
+
+</body>
+</html>
